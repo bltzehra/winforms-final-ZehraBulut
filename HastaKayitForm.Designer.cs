@@ -50,6 +50,7 @@
             this.dtpDogumTarihi = new System.Windows.Forms.Label();
             this.cmbKanGrubu = new System.Windows.Forms.Label();
             this.cmbCinsiyet = new System.Windows.Forms.Label();
+            this.btnHastaPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,12 +282,23 @@
             this.cmbCinsiyet.TabIndex = 21;
             this.cmbCinsiyet.Text = "Cinsiyet:";
             // 
+            // btnHastaPDF
+            // 
+            this.btnHastaPDF.Location = new System.Drawing.Point(708, 260);
+            this.btnHastaPDF.Name = "btnHastaPDF";
+            this.btnHastaPDF.Size = new System.Drawing.Size(154, 35);
+            this.btnHastaPDF.TabIndex = 22;
+            this.btnHastaPDF.Text = "Hasta Kayıt Raporu Al";
+            this.btnHastaPDF.UseVisualStyleBackColor = true;
+            this.btnHastaPDF.Click += new System.EventHandler(this.btnHastaPDF_Click);
+            // 
             // HastaKayitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(915, 570);
+            this.Controls.Add(this.btnHastaPDF);
             this.Controls.Add(this.cmbCinsiyet);
             this.Controls.Add(this.cmbKanGrubu);
             this.Controls.Add(this.dtpDogumTarihi);
@@ -343,5 +355,6 @@
         private System.Windows.Forms.Label dtpDogumTarihi;
         private System.Windows.Forms.Label cmbKanGrubu;
         private System.Windows.Forms.Label cmbCinsiyet;
+        private System.Windows.Forms.Button btnHastaPDF;
     }
 }

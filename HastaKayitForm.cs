@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace KlinikOtomasyon
 {
@@ -25,10 +28,10 @@ namespace KlinikOtomasyon
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
 
-                // Sütunları içeriğe göre otomatik boyutlandır
+               
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                // Satır seçmeyi kolaylaştırmak için
+               
                 dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
                 baglanti.Close();
@@ -143,19 +146,19 @@ namespace KlinikOtomasyon
             try
             {
                 baglanti.Open();
-                // SORGUDÜZENİ: Ad(@p1), Soyad(@p2), Tel(@p3), Sikayet(@p4), Dogum(@p5), Cinsiyet(@p6), Kan(@p7) --- WHERE TCNo(@p8)
+               
                 string sorgu = "UPDATE Hastalar SET Ad=@p1, Soyad=@p2, Telefon=@p3, Sikayet=@p4, DogumTarihi=@p5, Cinsiyet=@p6, KanGrubu=@p7 WHERE TCNo=@p8";
 
                 SqlCommand komut = new SqlCommand(sorgu, baglanti);
 
-                // PARAMETRELER (Sorgudaki sırayla aynı olmalı!)
+               
                 komut.Parameters.AddWithValue("@p1", txtAd.Text);
                 komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
                 komut.Parameters.AddWithValue("@p3", txtTelefon.Text);
                 komut.Parameters.AddWithValue("@p4", txtSikayet.Text);
                 komut.Parameters.AddWithValue("@p5", dateTimePicker1.Value);
-                komut.Parameters.AddWithValue("@p6", comboBox2.Text); // Senin kodda cmbCinsiyet yazıyordu, ama yukarıda comboBox2 kullanmışsın!
-                komut.Parameters.AddWithValue("@p7", comboBox1.Text); // Senin kodda cmbKanGrubu yazıyordu, ama yukarıda comboBox1 kullanmışsın!
+                komut.Parameters.AddWithValue("@p6", comboBox2.Text); 
+                komut.Parameters.AddWithValue("@p7", comboBox1.Text); 
                 komut.Parameters.AddWithValue("@p8", txtTCNo.Text);
 
                 komut.ExecuteNonQuery();
@@ -171,7 +174,62 @@ namespace KlinikOtomasyon
             }
         
     }
-        } 
+
+        private void btnHastaPDF_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "PDF Dosyası|*.pdf";
+                save.FileName = "Klinik_Hasta_Kayit_Listesi.pdf";
+
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    Document pdfDosya = new Document(PageSize.A4.Rotate());
+                    PdfWriter.GetInstance(pdfDosya, new FileStream(save.FileName, FileMode.Create));
+
+                    pdfDosya.Open();
+
+                   
+                    Paragraph baslik = new Paragraph("BULUT OZEL KLINIK - KAYITLI HASTA TAKIP LISTESI\n\n");
+                    baslik.Alignment = Element.ALIGN_CENTER;
+                    pdfDosya.Add(baslik);
+
+                    
+                    PdfPTable tablo = new PdfPTable(dataGridView1.Columns.Count);
+                    tablo.WidthPercentage = 100;
+
+                    
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    {
+                        tablo.AddCell(new Phrase(dataGridView1.Columns[i].HeaderText));
+                    }
+
+                    
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                        {
+                            if (dataGridView1.Rows[i].Cells[j].Value != null)
+                            {
+                                tablo.AddCell(new Phrase(dataGridView1.Rows[i].Cells[j].Value.ToString()));
+                            }
+                        }
+                    }
+
+                    pdfDosya.Add(tablo);
+                    pdfDosya.Close();
+
+                    MessageBox.Show("Hasta kayıt dökümü başarıyla PDF yapıldı!", "Rapor Hazır");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message);
+            }
+        }
+    } 
 
     } 
 

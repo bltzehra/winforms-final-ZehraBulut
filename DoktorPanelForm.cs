@@ -152,16 +152,16 @@ namespace KlinikOtomasyon
         }
             private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            // Çizgi rengini ve kalınlığını ayarla
-            Color cizgiRengi = Color.DodgerBlue; // İstediğin rengi seç
-            int kalinlik = 5; // Kaç piksel olsun?
+            
+            Color cizgiRengi = Color.DodgerBlue; 
+            int kalinlik = 5; 
 
-            // Kenarlığı çiz
+            
             ControlPaint.DrawBorder(e.Graphics, groupBox1.ClientRectangle,
-                cizgiRengi, kalinlik, ButtonBorderStyle.Solid,  // Sol
-                cizgiRengi, kalinlik, ButtonBorderStyle.Solid,  // Üst
-                cizgiRengi, kalinlik, ButtonBorderStyle.Solid,  // Sağ
-                cizgiRengi, kalinlik, ButtonBorderStyle.Solid); // Alt
+                cizgiRengi, kalinlik, ButtonBorderStyle.Solid,  
+                cizgiRengi, kalinlik, ButtonBorderStyle.Solid,  
+                cizgiRengi, kalinlik, ButtonBorderStyle.Solid,  
+                cizgiRengi, kalinlik, ButtonBorderStyle.Solid); 
         }
 
         private void btnDoktorPDF_Click(object sender, EventArgs e)
@@ -179,22 +179,22 @@ namespace KlinikOtomasyon
 
                     pdfDosya.Open();
 
-                    // Başlık
-                    Paragraph baslik = new Paragraph("OZCELIK OZEL KLINIK - DOKTOR KADROMUZ\n\n");
+                    
+                    Paragraph baslik = new Paragraph("BULUT OZEL KLINIK - DOKTOR KADROMUZ\n\n");
                     baslik.Alignment = Element.ALIGN_CENTER;
                     pdfDosya.Add(baslik);
 
-                    // Tablo (DataGridView ismini kontrol et kanka, dgvDoktorlar mı?)
+                    
                     PdfPTable tablo = new PdfPTable(dataGridView1.Columns.Count);
                     tablo.WidthPercentage = 100;
 
-                    // Başlıkları ekle
+                    
                     for (int i = 0; i < dataGridView1.Columns.Count; i++)
                     {
                         tablo.AddCell(new Phrase(dataGridView1.Columns[i].HeaderText));
                     }
 
-                    // Verileri ekle
+                    
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         for (int j = 0; j < dataGridView1.Columns.Count; j++)
@@ -209,7 +209,7 @@ namespace KlinikOtomasyon
                     pdfDosya.Add(tablo);
                     pdfDosya.Close();
 
-                    MessageBox.Show("Doktor listesi PDF olarak hazır kanka!", "Başarılı");
+                    MessageBox.Show("Doktor listesi PDF olarak hazır!", "Başarılı");
                 }
             }
             catch (Exception ex)

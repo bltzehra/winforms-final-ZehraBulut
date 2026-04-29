@@ -34,7 +34,7 @@ namespace KlinikOtomasyon
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            // Sütun isimlerini senin SQL tablonla birebir eşitledim kanka:
+           
             SqlCommand komut = new SqlCommand("insert into tbl_Personeller (PersonelAd, PersonelSoyad, PersonelUnvan, PersonelBrans, PersonelTC, PersonelTelefon, PersonelSifre) values (@p1, @p2, @p3, @p4, @p5, @p6, @p7)", bgl.baglanti());
 
             komut.Parameters.AddWithValue("@p1", txtAd.Text);
@@ -49,14 +49,11 @@ namespace KlinikOtomasyon
             bgl.baglanti().Close();
 
             MessageBox.Show("Personel başarıyla kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Eğer listele metodunu yazdıysan burayı aç:
             listele();
         }
         void listele()
         {
             DataTable dt = new DataTable();
-            // Burayı da tbl_Personeller yapıyoruz
             SqlDataAdapter da = new SqlDataAdapter("Select * From tbl_Personeller", bgl.baglanti());
             da.Fill(dt);
             dgvPersonel.DataSource = dt;
@@ -70,7 +67,7 @@ namespace KlinikOtomasyon
         private void txtAra_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            // SQL'de PersonelAd içinde yazdığın harfler geçenleri anlık getirir
+            
             SqlDataAdapter da = new SqlDataAdapter("Select * From tbl_Personeller where PersonelAd Like '%" + txtAra.Text + "%'", bgl.baglanti());
             da.Fill(dt);
             dgvPersonel.DataSource = dt;
@@ -81,11 +78,11 @@ namespace KlinikOtomasyon
 
         private void dgvPersonel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Tıklanan satırın numarasını alıyoruz
+            
             int secilen = dgvPersonel.SelectedCells[0].RowIndex;
 
-            // Hücrelerdeki verileri ilgili kutulara dağıtıyoruz
-            // Sıralama SQL'deki sütun sırasına göre gider (0, 1, 2...)
+            
+           
             txtId.Text = dgvPersonel.Rows[secilen].Cells[0].Value.ToString();
             txtAd.Text = dgvPersonel.Rows[secilen].Cells[1].Value.ToString();
             txtSoyad.Text = dgvPersonel.Rows[secilen].Cells[2].Value.ToString();
@@ -109,13 +106,13 @@ namespace KlinikOtomasyon
             komutGuncelle.Parameters.AddWithValue("@p5", mskTC.Text);
             komutGuncelle.Parameters.AddWithValue("@p6", mskTelefon.Text);
             komutGuncelle.Parameters.AddWithValue("@p7", txtSifre.Text);
-            komutGuncelle.Parameters.AddWithValue("@p8", txtId.Text); // Hangi ID'ye sahip personel değişecekse o
+            komutGuncelle.Parameters.AddWithValue("@p8", txtId.Text); 
 
             komutGuncelle.ExecuteNonQuery();
             bgl.baglanti().Close();
 
             MessageBox.Show("Personel bilgileri güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            listele(); // Tabloyu anlık yenile
+            listele(); 
         }
 
 
@@ -128,7 +125,7 @@ namespace KlinikOtomasyon
             bgl.baglanti().Close();
 
             MessageBox.Show("Personel kaydı silindi.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            listele(); // Tabloyu tazele
+            listele(); 
         }
 
 
@@ -138,13 +135,13 @@ namespace KlinikOtomasyon
             txtId.Text = "";
             txtAd.Text = "";
             txtSoyad.Text = "";
-            cmbUnvan.SelectedIndex = -1; // ComboBox'ı ilk haline (boş) döndürür
+            cmbUnvan.SelectedIndex = -1; 
             cmbBrans.SelectedIndex = -1;
             mskTC.Text = "";
             mskTelefon.Text = "";
             txtSifre.Text = "";
 
-            // İmleci direkt Ad kutusuna odaklar, yeni kayıt için hazır bekler
+           
             txtAd.Focus();
         }
 
@@ -167,29 +164,29 @@ namespace KlinikOtomasyon
 
                 if (save.ShowDialog() == DialogResult.OK)
                 {
-                    // 1. Sayfa Yapısını Kur (A4 ve Yatay yapmak istersen PageSize.A4.Rotate() diyebilirsin)
+                  
                     Document pdfDosya = new Document(PageSize.A4);
                     PdfWriter.GetInstance(pdfDosya, new FileStream(save.FileName, FileMode.Create));
 
                     pdfDosya.Open();
 
-                    // 2. Başlık (Senin Figma tasarımın gibi şık olsun)
-                    Paragraph baslik = new Paragraph("OZCELIK OZEL KLINIK - PERSONEL DOKUMU\n\n");
+                    
+                    Paragraph baslik = new Paragraph("BULUT OZEL KLINIK - PERSONEL DOKUMU\n\n");
                     baslik.Alignment = Element.ALIGN_CENTER;
                     pdfDosya.Add(baslik);
 
-                    // 3. Tabloyu Oluştur (DataGridView'daki sütun sayısına göre)
+                   
                     PdfPTable tablo = new PdfPTable(dgvPersonel.Columns.Count);
                     tablo.WidthPercentage = 100; // Sayfaya tam yayılsın
 
-                    // Tablo Başlıklarını Ekle
+                   
                     for (int i = 0; i < dgvPersonel.Columns.Count; i++)
                     {
                         tablo.AddCell(new Phrase(dgvPersonel.Columns[i].HeaderText));
                     }
 
-                    // Verileri Satır Satır Ekle
-                    for (int i = 0; i < dgvPersonel.Rows.Count; i++)
+                    
+                    for (int i = 0; i < dgvPersonel.Rows.Count; i++)    // SATIR SATIR EKLE
                     {
                         for (int j = 0; j < dgvPersonel.Columns.Count; j++)
                         {
@@ -203,7 +200,7 @@ namespace KlinikOtomasyon
                     pdfDosya.Add(tablo);
                     pdfDosya.Close();
 
-                    MessageBox.Show("Rapor başarıyla oluşturuldu kanka!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Rapor başarıyla oluşturuldu!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
