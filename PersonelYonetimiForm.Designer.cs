@@ -373,12 +373,13 @@
             // 
             // btnPDF
             // 
+            this.btnPDF.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPDF.Location = new System.Drawing.Point(591, 241);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(174, 28);
             this.btnPDF.TabIndex = 25;
             this.btnPDF.Text = "PDF Raporu Oluştur";
-            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.UseVisualStyleBackColor = false;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // PersonelYonetimiForm

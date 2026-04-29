@@ -284,12 +284,14 @@
             // 
             // btnHastaPDF
             // 
+            this.btnHastaPDF.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHastaPDF.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHastaPDF.Location = new System.Drawing.Point(708, 260);
             this.btnHastaPDF.Name = "btnHastaPDF";
             this.btnHastaPDF.Size = new System.Drawing.Size(154, 35);
             this.btnHastaPDF.TabIndex = 22;
             this.btnHastaPDF.Text = "Hasta Kayıt Raporu Al";
-            this.btnHastaPDF.UseVisualStyleBackColor = true;
+            this.btnHastaPDF.UseVisualStyleBackColor = false;
             this.btnHastaPDF.Click += new System.EventHandler(this.btnHastaPDF_Click);
             // 
             // HastaKayitForm

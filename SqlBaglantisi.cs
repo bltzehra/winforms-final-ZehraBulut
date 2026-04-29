@@ -11,7 +11,7 @@ namespace KlinikOtomasyon
     {
         public SqlConnection baglanti()
         {
-            // Buradaki Data Source kısmına kendi bilgisayarının adını yazmayı unutma aşkım
+           
             SqlConnection baglan = new SqlConnection(@"Data Source=ZEHRA;Initial Catalog=KullaniciOtomasyonDB;Integrated Security=True");
             baglan.Open();
             return baglan;

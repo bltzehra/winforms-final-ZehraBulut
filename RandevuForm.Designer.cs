@@ -248,12 +248,14 @@
             // 
             // btnRandevuPDF
             // 
+            this.btnRandevuPDF.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRandevuPDF.Font = new System.Drawing.Font("Microsoft JhengHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRandevuPDF.Location = new System.Drawing.Point(560, 353);
             this.btnRandevuPDF.Name = "btnRandevuPDF";
             this.btnRandevuPDF.Size = new System.Drawing.Size(184, 35);
             this.btnRandevuPDF.TabIndex = 18;
             this.btnRandevuPDF.Text = "Günlük Randevu Raporu";
-            this.btnRandevuPDF.UseVisualStyleBackColor = true;
+            this.btnRandevuPDF.UseVisualStyleBackColor = false;
             this.btnRandevuPDF.Click += new System.EventHandler(this.btnRandevuPDF_Click);
             // 
             // RandevuForm

@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(52, 41);
+            this.label1.Location = new System.Drawing.Point(52, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 17);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(43, 81);
+            this.label2.Location = new System.Drawing.Point(43, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(276, 35);
+            this.label3.Location = new System.Drawing.Point(276, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(250, 82);
+            this.label4.Location = new System.Drawing.Point(250, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(52, 227);
+            this.label5.Location = new System.Drawing.Point(52, 241);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 4;
@@ -105,9 +105,9 @@
             // 
             this.btnEkle.BackColor = System.Drawing.Color.Lime;
             this.btnEkle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEkle.Location = new System.Drawing.Point(211, 516);
+            this.btnEkle.Location = new System.Drawing.Point(211, 548);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(95, 30);
+            this.btnEkle.Size = new System.Drawing.Size(95, 32);
             this.btnEkle.TabIndex = 5;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -117,9 +117,9 @@
             // 
             this.btnSil.BackColor = System.Drawing.Color.Red;
             this.btnSil.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(488, 516);
+            this.btnSil.Location = new System.Drawing.Point(488, 548);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(95, 30);
+            this.btnSil.Size = new System.Drawing.Size(95, 32);
             this.btnSil.TabIndex = 6;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = false;
@@ -129,9 +129,9 @@
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.Location = new System.Drawing.Point(339, 516);
+            this.btnGuncelle.Location = new System.Drawing.Point(339, 548);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(95, 30);
+            this.btnGuncelle.Size = new System.Drawing.Size(95, 32);
             this.btnGuncelle.TabIndex = 7;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = false;
@@ -142,18 +142,18 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(766, 208);
+            this.dataGridView1.Size = new System.Drawing.Size(766, 221);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(119, 29);
+            this.txtAd.Location = new System.Drawing.Point(119, 31);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(100, 30);
             this.txtAd.TabIndex = 9;
@@ -161,14 +161,14 @@
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(119, 75);
+            this.txtSoyad.Location = new System.Drawing.Point(119, 80);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(100, 30);
             this.txtSoyad.TabIndex = 10;
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(98, 222);
+            this.txtSifre.Location = new System.Drawing.Point(98, 236);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(100, 30);
             this.txtSifre.TabIndex = 13;
@@ -177,14 +177,14 @@
             // 
             this.cmbBrans.DropDownWidth = 200;
             this.cmbBrans.FormattingEnabled = true;
-            this.cmbBrans.Location = new System.Drawing.Point(328, 34);
+            this.cmbBrans.Location = new System.Drawing.Point(328, 36);
             this.cmbBrans.Name = "cmbBrans";
             this.cmbBrans.Size = new System.Drawing.Size(188, 31);
             this.cmbBrans.TabIndex = 14;
             // 
             // mskTc
             // 
-            this.mskTc.Location = new System.Drawing.Point(328, 77);
+            this.mskTc.Location = new System.Drawing.Point(328, 82);
             this.mskTc.Name = "mskTc";
             this.mskTc.Size = new System.Drawing.Size(136, 30);
             this.mskTc.TabIndex = 15;
@@ -204,9 +204,9 @@
             this.groupBox1.Controls.Add(this.cmbBrans);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(152, 23);
+            this.groupBox1.Location = new System.Drawing.Point(152, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(525, 161);
+            this.groupBox1.Size = new System.Drawing.Size(525, 171);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DOKTOR BİLGİLERİ";
@@ -217,35 +217,37 @@
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 218);
+            this.groupBox2.Location = new System.Drawing.Point(12, 232);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(769, 237);
+            this.groupBox2.Size = new System.Drawing.Size(769, 252);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BRANŞ";
             // 
             // btnDoktorPDF
             // 
-            this.btnDoktorPDF.Location = new System.Drawing.Point(603, 208);
+            this.btnDoktorPDF.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDoktorPDF.Location = new System.Drawing.Point(603, 221);
             this.btnDoktorPDF.Name = "btnDoktorPDF";
-            this.btnDoktorPDF.Size = new System.Drawing.Size(178, 30);
+            this.btnDoktorPDF.Size = new System.Drawing.Size(178, 32);
             this.btnDoktorPDF.TabIndex = 18;
             this.btnDoktorPDF.Text = "Doktor Listesi Raporu";
-            this.btnDoktorPDF.UseVisualStyleBackColor = true;
+            this.btnDoktorPDF.UseVisualStyleBackColor = false;
             this.btnDoktorPDF.Click += new System.EventHandler(this.btnDoktorPDF_Click);
             // 
             // DoktorPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(843, 590);
+            this.ClientSize = new System.Drawing.Size(843, 627);
             this.Controls.Add(this.btnDoktorPDF);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnSil);
+            this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "DoktorPanelForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.DoktorPanelForm_Load);
